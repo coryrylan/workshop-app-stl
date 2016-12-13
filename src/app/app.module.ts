@@ -14,10 +14,12 @@ import { HeroListComponent } from './hero-list/hero-list.component';
 import { HomeComponent } from './home/home.component';
 
 import { HeroDataService } from './shared/services/hero-data.service';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'select', component: HeroSelectionComponent }
+  { path: 'select', component: HeroSelectionComponent },
+  { path: 'hero/:id', component: HeroDetailComponent }
 ];
 
 @NgModule({
@@ -28,7 +30,8 @@ const routes: Routes = [
     HeroCardComponent,
     HeroSearchComponent,
     HeroListComponent,
-    HomeComponent
+    HomeComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
