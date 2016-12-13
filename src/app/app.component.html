@@ -1,11 +1,13 @@
-<div class="container">
-  <h1>
-    {{title}}
-  </h1>
-  <header>
-    <a [routerLink]="['']">Home</a>
-    <a [routerLink]="['/select']">Select</a>
-  </header>
+<header>
+  <a [routerLink]="['']">Home</a>
+   
+  <a [routerLink]="['/select']">Select</a>
+</header>
 
+<div class="container">
   <router-outlet></router-outlet>
 </div>
+
+<footer>
+
+</footer>

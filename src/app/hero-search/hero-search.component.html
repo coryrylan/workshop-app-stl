@@ -1,14 +1,16 @@
+<br>
+
 <label for="search">Search</label>
 <input id="search" />
 
-<button [class.active]="activeType == 'human'" (click)="setFilter('human')">
+<button class="btn" [class.active]="activeType == 'human'" (click)="setFilter('human')">
   Human
 </button>
 
-<button [class.active]="activeType == 'droid'" (click)="setFilter('droid')">
+<button class="btn" [class.active]="activeType == 'droid'" (click)="setFilter('droid')">
   Droid
 </button>
 
-<button [class.active]="activeType == 'all'" (click)="setFilter('all')">
+<button class="btn" [class.active]="activeType == 'all'" (click)="setFilter('all')">
   All
 </button>

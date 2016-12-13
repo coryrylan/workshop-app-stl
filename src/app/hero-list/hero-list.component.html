@@ -1,9 +1,5 @@
-<p>
-  hero-list works!
-</p>
+<h2>Heroes</h2>
 
-<ul>
-  <li *ngFor="let h of heroes">
-    <app-hero-card [hero]="h"></app-hero-card>
-  </li>
-</ul>
+<div *ngFor="let h of heroes">
+  <app-hero-card [hero]="h"></app-hero-card>
+</div>
