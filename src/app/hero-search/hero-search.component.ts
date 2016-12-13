@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-hero-search',
@@ -14,6 +15,14 @@ export class HeroSearchComponent implements OnInit {
     this.searchForm = this.formBuilder.group({
       search: ['', [Validators.required, Validators.minLength(3)]]
     });
+
+    this.getSearchChanges().subscribe(searchValue => console.log(searchValue));
+  }
+
+  getSearchChanges() {
+    return this.searchForm.valueChanges
+      .map(values => values.search)
+      .map(v => '1' + v);
   }
 
   submit() {

@@ -9,7 +9,7 @@ import { Hero } from '../shared/interfaces/hero';
   styleUrls: ['./hero-selection.component.css']
 })
 export class HeroSelectionComponent implements OnInit {
-
+  show = false;
   constructor(title: Title) {
     title.setTitle('Select Hero');
   }

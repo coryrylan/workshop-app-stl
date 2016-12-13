@@ -13,6 +13,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HomeComponent } from './home/home.component';
 
+import { HeroDataService } from './shared/services/hero-data.service';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'select', component: HeroSelectionComponent }
@@ -35,7 +37,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [HeroDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
