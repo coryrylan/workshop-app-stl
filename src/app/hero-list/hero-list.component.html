@@ -1,5 +1,5 @@
 <h2>Heroes</h2>
 
 <div *ngFor="let h of heroes">
-  <app-hero-card [hero]="h"></app-hero-card>
+  <app-hero-card [hero]="h" (selected)="emitHero($event)"></app-hero-card>
 </div>

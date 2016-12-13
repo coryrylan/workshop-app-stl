@@ -2,7 +2,13 @@
   <div class="card-content">
     <h4>{{hero.name}}</h4>
     <p>
-      {{hero.birthday}} {{hero.height}}
+      Birthday: {{hero.birthday}}
+      <br>
+      Height: {{hero.height}}
+      <br>
+      Weight: {{hero.weight}}
     </p>
+
+    <button (click)="selectHero()" class="btn">Select</button>
   </div>
 </div>

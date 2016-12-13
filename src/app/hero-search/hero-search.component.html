@@ -1,7 +1,9 @@
 <br>
 
-<label for="search">Search</label>
-<input id="search" />
+<form [formGroup]="searchForm" (ngSubmit)="submit()">
+  <label for="search">Search</label>
+  <input id="search" formControlName="search" [ngClass]="{'invalid-input': !searchForm.controls.search.valid && searchForm.controls.search.touched}" />
+</form>
 
 <button class="btn" [class.active]="activeType == 'human'" (click)="setFilter('human')">
   Human

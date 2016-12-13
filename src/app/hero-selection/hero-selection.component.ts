@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
+import { Hero } from '../shared/interfaces/hero';
 
 @Component({
   selector: 'app-hero-selection',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroSelectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(title: Title) {
+    title.setTitle('Select Hero');
+  }
 
   ngOnInit() {
   }
 
+  setHero(hero: Hero) {
+    console.log(hero);
+  }
 }

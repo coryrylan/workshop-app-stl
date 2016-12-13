@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Hero } from '../shared/interfaces/hero';
 
 @Component({
@@ -8,11 +8,15 @@ import { Hero } from '../shared/interfaces/hero';
 })
 export class HeroCardComponent implements OnInit {
   @Input() hero: Hero;
-
-  constructor() { }
+  @Output() selected = new EventEmitter<Hero>();
+  constructor() {
+  }
 
   ngOnInit() {
 
   }
 
+  selectHero() {
+    this.selected.emit(this.hero);
+  }
 }

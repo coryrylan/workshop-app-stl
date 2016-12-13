@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 const heroes = [{
   'name': 'Beru Whitesun Lars',
@@ -118,10 +118,14 @@ const heroes = [{
   styleUrls: ['./hero-list.component.css']
 })
 export class HeroListComponent implements OnInit {
+  @Output() select = new EventEmitter();
   heroes = heroes;
   constructor() { }
 
   ngOnInit() {
   }
 
+  emitHero(hero) {
+    this.select.emit(hero);
+  }
 }

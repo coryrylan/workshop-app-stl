@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-hero-search',
@@ -6,8 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero-search.component.css']
 })
 export class HeroSearchComponent implements OnInit {
+  searchForm: FormGroup;
   activeType = 'human';
-  constructor() { }
+
+  constructor(private formBuilder: FormBuilder) {
+    this.searchForm = this.formBuilder.group({
+      search: ['', [Validators.required, Validators.minLength(3)]]
+    });
+  }
+
+  submit() {
+    console.log(this.searchForm.value);
+  }
 
   ngOnInit() {
   }
@@ -26,3 +37,5 @@ export class HeroSearchComponent implements OnInit {
     }
   }
 }
+
+// https://github.com/splintercode/workshop-app-stl
