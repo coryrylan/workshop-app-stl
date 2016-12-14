@@ -19,7 +19,8 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'select', component: HeroSelectionComponent },
-  { path: 'hero/:id', component: HeroDetailComponent }
+  { path: 'hero/:id', component: HeroDetailComponent },
+  { path: 'about', loadChildren: './about/about.module#AboutModule' }
 ];
 
 @NgModule({

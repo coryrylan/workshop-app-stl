@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/Observable'; 
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -48,3 +49,7 @@ export class HeroSearchComponent implements OnInit {
 }
 
 // https://github.com/splintercode/workshop-app-stl
+
+
+
+// ng build --prod --aot --no-sourcemap
